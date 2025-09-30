@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Flexbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;                /* activa Flexbox */
+      flex-direction: row;          /* horizontal */
+      justify-content: space-between; /* espacio entre cajas */
+      align-items: center;          /* centrado vertical */
+      width: 80%;                   /* ancho del contenedor */
+      border: 2px solid #ff66b2;    /* borde rosado */
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #222;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #ff66b2;  /* rosado */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .box:nth-child(2) {
+      background-color: #ff99cc;  /* rosado claro */
+    }
+
+    .box:nth-child(3) {
+      background-color: #ff3399;  /* rosado intenso */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>
