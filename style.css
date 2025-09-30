@@ -1,0 +1,75 @@
+/* style.css */
+
+/* Variables de color */
+:root {
+    --color-fondo: #111;       /* fondo oscuro */
+    --color-texto: #f2f2f2;    /* texto claro */
+    --color-rosado: #ff66b2;   /* rosado principal */
+    --color-rosado-claro: #ff99cc; /* rosado claro */
+    --fuente: 'DM Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del body */
+body {
+    font-family: var(--fuente);
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+/* Cajas */
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Colores de las cajas */
+.box:nth-child(1) { background-color: var(--color-rosado); }
+.box:nth-child(2) { background-color: var(--color-rosado-claro); }
+.box:nth-child(3) { background-color: #ff3399; }
+
+/* Efecto hover */
+.box:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .box {
+        margin-bottom: 10px;
+    }
+}
