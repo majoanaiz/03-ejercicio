@@ -4,7 +4,98 @@
   <meta charset="UTF-8">
   <title>Flexbox Negro + Rosado</title>
   <style>
-    /* Aquí va todo el CSS */
+    //* style.css */
+
+/* Variables de color */
+:root {
+    --color-fondo: #111;          /* fondo oscuro */
+    --color-texto: #f2f2f2;       /* texto claro */
+    --color-rosado: #ff66b2;      /* rosado principal */
+    --color-rosado-claro: #ff99cc;/* rosado claro */
+    --fuente: 'DM Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: var(--fuente);
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--color-rosado);
+    font-size: 2rem;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px); /* 3 columnas */
+    grid-template-rows: repeat(2, 150px);    /* 2 filas */
+    gap: 20px;                               /* espacio entre cajas */
+    margin: 2rem 0;
+}
+
+/* Cajas */
+.box {
+    background-color: var(--color-rosado);
+    display: flex;                     /* Flexbox dentro de la celda */
+    justify-content: center;           /* centro horizontal */
+    align-items: center;               /* centro vertical */
+    color: var(--color-texto);
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+/* Diferentes tonos para cada caja */
+.box:nth-child(2) { background-color: var(--color-rosado-claro); }
+.box:nth-child(3) { background-color: #ff3399; }
+.box:nth-child(4) { background-color: var(--color-rosado); }
+.box:nth-child(5) { background-color: var(--color-rosado-claro); }
+.box:nth-child(6) { background-color: #ff3399; }
+
+/* Efecto hover */
+.box:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #222;
+    color: var(--color-texto);
+    border-top: 2px solid var(--color-rosado);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 120px);
+        grid-template-rows: repeat(3, 120px);
+    }
+}/
   </style>
 </head>
 <body>
