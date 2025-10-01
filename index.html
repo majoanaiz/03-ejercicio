@@ -2,109 +2,58 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Flexbox Negro + Rosado</title>
-  <style>
-    //* style.css */
-
-/* Variables de color */
-:root {
-    --color-fondo: #111;          /* fondo oscuro */
-    --color-texto: #f2f2f2;       /* texto claro */
-    --color-rosado: #ff66b2;      /* rosado principal */
-    --color-rosado-claro: #ff99cc;/* rosado claro */
-    --fuente: 'DM Sans', sans-serif;
-}
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
-    font-family: var(--fuente);
-    background: var(--color-fondo);
-    color: var(--color-texto);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Encabezado */
-header {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-header h1 {
-    color: var(--color-rosado);
-    font-size: 2rem;
-}
-
-/* Grid Container */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 150px); /* 3 columnas */
-    grid-template-rows: repeat(2, 150px);    /* 2 filas */
-    gap: 20px;                               /* espacio entre cajas */
-    margin: 2rem 0;
-}
-
-/* Cajas */
-.box {
-    background-color: var(--color-rosado);
-    display: flex;                     /* Flexbox dentro de la celda */
-    justify-content: center;           /* centro horizontal */
-    align-items: center;               /* centro vertical */
-    color: var(--color-texto);
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-/* Diferentes tonos para cada caja */
-.box:nth-child(2) { background-color: var(--color-rosado-claro); }
-.box:nth-child(3) { background-color: #ff3399; }
-.box:nth-child(4) { background-color: var(--color-rosado); }
-.box:nth-child(5) { background-color: var(--color-rosado-claro); }
-.box:nth-child(6) { background-color: #ff3399; }
-
-/* Efecto hover */
-.box:hover {
-    transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    padding: 1rem 0;
-    text-align: center;
-    background-color: #222;
-    color: var(--color-texto);
-    border-top: 2px solid var(--color-rosado);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 120px);
-        grid-template-rows: repeat(3, 120px);
-    }
-}/
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Aquí va el contenido visible -->
-  <div class="container">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+  <!-- Portada -->
+  <header class="portada">
+    <img src="mi-foto.jpg" alt="Mi foto" class="foto">
+    <div class="descripcion">
+      <h1>¡Hola, soy Majo!</h1>
+      <p>Soy estudiante de diseño y aquí muestro mis primeros proyectos. 🚀</p>
+    </div>
+  </header>
+
+  <!-- Galería de proyectos -->
+  <section class="galeria">
+    <div class="proyecto" data-info="Este es mi primer proyecto, una página básica en HTML.">
+      <img src="proyecto1.jpg" alt="Proyecto 1">
+    </div>
+    <div class="proyecto" data-info="Este es mi segundo proyecto, con un diseño en CSS.">
+      <img src="proyecto2.jpg" alt="Proyecto 2">
+    </div>
+    <div class="proyecto" data-info="Un proyecto con un poco de JavaScript.">
+      <img src="proyecto3.jpg" alt="Proyecto 3">
+    </div>
+    <div class="proyecto" data-info="Aquí experimenté con responsive design.">
+      <img src="proyecto4.jpg" alt="Proyecto 4">
+    </div>
+    <div class="proyecto" data-info="Un prototipo de aplicación web.">
+      <img src="proyecto5.jpg" alt="Proyecto 5">
+    </div>
+    <div class="proyecto" data-info="Un trabajo en equipo sobre diseño visual.">
+      <img src="proyecto6.jpg" alt="Proyecto 6">
+    </div>
+    <div class="proyecto" data-info="Proyecto experimental con animaciones.">
+      <img src="proyecto7.jpg" alt="Proyecto 7">
+    </div>
+    <div class="proyecto" data-info="Mi proyecto final de este semestre.">
+      <img src="proyecto8.jpg" alt="Proyecto 8">
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="cerrar">&times;</span>
+      <p id="modal-texto"></p>
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
 
